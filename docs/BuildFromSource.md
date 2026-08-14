@@ -6,16 +6,10 @@ To get started, fork this repo and then clone it locally. This workflow assumes 
 
 1. To create your own fork of the repo, sign in to GitHub and click the repo's **Fork** button. For more information on managing forks, you can review the [GitHub docs on working with forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks).
 
-1. Clone the repo locally using the `git clone` command. Since this repo contains submodules, include the `--recursive` argument to pull the sources for the submodules locally.
+1. Clone the repo locally using the `git clone` command.
 
     ```bash
-    git clone --recursive https://github.com/YOUR_USERNAME/aspnetcore
-    ```
-
-    If you've already cloned the repo without passing the `--recursive` flag, fetch the submodule sources at any time with:
-
-    ```bash
-    git submodule update --init --recursive
+    git clone https://github.com/YOUR_USERNAME/aspnetcore
     ```
 
     > :bulb: All other steps below will be against your fork of the aspnetcore repo (e.g. `YOUR_USERNAME/aspnetcore`), not the official `dotnet/aspnetcore` repo.

@@ -20,7 +20,6 @@ ADD https://api.github.com/repos/dotnet/aspnetcore/git/ref/heads/${gitBranch} /a
 RUN git init \
     && git fetch https://github.com/aspnet/aspnetcore ${gitBranch} \
     && git reset --hard FETCH_HEAD \
-    && git submodule update --init \
     && git remote add origin https://github.com/aspnet/aspnetcore
 
 RUN ./restore.sh
