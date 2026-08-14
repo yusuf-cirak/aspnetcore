@@ -73,11 +73,10 @@ try {
 
     $projectFileNames = New-Object 'System.Collections.Generic.HashSet[string]'
 
-    # Ignore duplicates in submodules. These should be isolated from the rest of the build.
     # Ignore duplicates in the .ref folder. This is expected.
     Get-ChildItem -Recurse "$repoRoot/src/*.*proj" |
     Where-Object {
-        $_.FullName -NotLike '*\submodules\*' -and $_.FullName -NotLike '*\node_modules\*' -and
+        $_.FullName -NotLike '*\node_modules\*' -and
         $_.FullName -NotLike '*\bin\*' -and $_.FullName -NotLike '*\src\ProjectTemplates\*\content\*'
     } |
     Where-Object { (Split-Path -Leaf (Split-Path -Parent $_)) -ne 'ref' } |
@@ -107,7 +106,7 @@ try {
             "Packages in package-lock.json file resolved from wrong registry. All dependencies must be resolved from $registry"
     }
 
-    # ComponentsWebAssembly-CSharp.sln is used by the templating engine; MessagePack.sln is irrelevant (in submodule).
+    # ComponentsWebAssembly-CSharp.sln is used by the templating engine.
     $solution = Get-ChildItem "$repoRoot/AspNetCore.slnx"
     $solutionFile = Split-Path -Leaf $solution
 

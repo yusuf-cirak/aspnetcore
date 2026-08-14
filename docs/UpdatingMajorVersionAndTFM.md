@@ -24,7 +24,7 @@ Typically, we will update the Major Version before updating the TFM. This is bec
 * **In the new release branch**, add files named `.\eng\PlatformManifest.txt` and `.\eng\PackageOverrides.txt`. These files should be found by downloading the just released RTM version of the `Microsoft.AspNetCore.App.Ref` package, and copying over the files from the `data` folder.
 * Update [helix-matrix.yml](https://github.com/dotnet/aspnetcore/blob/436556163a671259c8b14ae1c90d72767af62d18/.azure/pipelines/helix-matrix.yml#L12-L16) to list the currently active release branches.
     * This should be done in `main` as well as the relevant release branch.
-* Update [dependabot.yml](https://github.com/dotnet/aspnetcore/blob/b43884c1b21ea71e91c539721a75e5c96b8c1263/.github/dependabot.yml#L74-L85) to list the currently active release branches for submodule updates.
+* Update [dependabot.yml](https://github.com/dotnet/aspnetcore/blob/b43884c1b21ea71e91c539721a75e5c96b8c1263/.github/dependabot.yml#L74-L85) to list the currently active release branches.
     * This only needs to be done in `main`.
 
 ### Validation
